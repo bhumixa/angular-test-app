@@ -1,0 +1,35 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-4 offset-sm-4">
+            <div class="card  user-row" style="width: 25rem;">
+                <div class="text-center ">
+                    <h2>Login</h2>
+                </div>
+
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="col">
+                            <small id="passwordHelp" class="text-danger">
+                                {{error}}
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label" color="secondary">Username</label>
+                            <input type="text" formControlName="username" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label" color="secondary">Password</label>
+                            <input type="password" formControlName="password" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <button [disabled]="loading" class="btn btn-primary">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

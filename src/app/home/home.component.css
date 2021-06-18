@@ -1,0 +1,13 @@
+.row {
+    display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    padding: 10px;
+}
+
+.user-list-div {
+    height: 800px;
+    overflow-y: scroll;
+}

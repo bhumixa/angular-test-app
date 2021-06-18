@@ -1,0 +1,37 @@
+<app-nav-bar *ngIf="currentUser" [currentUser]="currentUser" showBack="true"></app-nav-bar>
+
+<div class="container">
+    <div class="row mr50 " >
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{user.picture.large}}" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <div class="row">
+                            <h4 style="float: left;">
+                                {{user.name.first}} {{user.name.last}}</h4>
+                            <h6 style="float: left;"> ({{user.gender}}) </h6>
+                        </div>
+                        <div class="row">
+                            <small><cite
+                                    title="{{user.location.state}}, {{user.location.country}}">{{user.location.state}},
+                                    {{user.location.country}} <bi name="geo-alt-fill"></bi></cite></small>
+                            <p>
+                                <bi name="gift"></bi> {{user.dob.date | date}}
+                                <br/>
+                                <bi name="envelope"></bi> {{user.email}}
+                                <br />
+                                <bi name="telephone-fill"></bi> {{user.phone}}
+                                <br />
+                                <bi name="phone"></bi> {{user.cell}}
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

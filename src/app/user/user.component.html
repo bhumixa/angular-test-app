@@ -1,0 +1,19 @@
+<div class="container " style="text-align:-webkit-center">
+
+    <div class="card  user-row" style="width: 18rem;">
+        <div class="text-center ">
+            <img src="{{user.picture.large}}" class=" user-image card-img-top text-center" alt="...">
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">{{user.name.title}} {{user.name.first}} {{user.name.last}}</h5>
+            <p class="card-text"> {{user.location.street.number}}, {{user.location.street.name}}, {{user.location.city}}
+            {{user.location.state}}, {{user.location.country}}</p>
+            <div class="btn btn-primary" (click)="viewUser(user)">View</div>
+            <!-- <a class="btn btn-primary" routerLink="/detail/{{user}}">
+                View
+            </a> -->
+        </div>
+    </div>
+
+</div>

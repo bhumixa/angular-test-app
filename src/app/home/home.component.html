@@ -1,0 +1,25 @@
+<app-nav-bar *ngIf="currentUser" [currentUser]="currentUser"></app-nav-bar>
+<div class="container text-center ">
+    <div class="row">
+        <div class="col-3 offset-3 align-self-center">
+            <input type="text"  [(ngModel)]="searchTxt"  autoFocus="true" placeholder="search users"
+                (change)="search($event)" />
+        </div>
+        <div class="col-3 align-self-left">
+            <button type="button" class="btn btn-info" (click)="clearSearch()"> Clear Search</button>
+        </div>
+    </div>
+
+    <div class="user-list-div">
+        <div *ngIf="user$.length == 0">
+            No records found
+        </div>
+        <div class="row" *ngFor="let user of user$; index as i">
+            <div class="col align-self-center ">
+                <app-user [user]=user></app-user>
+            </div>
+        </div>
+        <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+            [infiniteScrollContainer]="selector" [fromRoot]="true" (scrolled)="onScroll()"></div>
+    </div>
+</div>

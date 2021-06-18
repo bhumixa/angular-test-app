@@ -1,0 +1,23 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentUser">
+    <a class="navbar-brand" href="#"></a>
+    <a class="nav-item nav-link text-right" (click)="logout()">Logout</a>
+</nav>
+{{showBack}} -->
+
+<nav class="navbar navbar-inverse navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" class="navbar-brand cursor" (click)="goBack()" *ngIf="showBack"><bi name="chevron-left"></bi> Back </a>
+            
+
+            <a class="navbar-brand"> <img src="{{currentUser.picture.thumbnail}}"> </a>
+            <a class="navbar-brand" href="#"> Welcome ! {{currentUser.name.first}} {{currentUser.name.last}}</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" (click)="logout()">
+                    <bi name="logout"></bi> Logout
+                </a></li>
+        </ul>
+    </div>
+</nav>
